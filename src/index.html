@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>JSON Table Editor</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'none'"> -->
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container">
+            <div>
+                <button class="btn btn-info" type="button" style="margin-right: 20px;" onclick="functions.newTable()">New</button>
+                <button class="btn btn-info" type="button" style="margin-right: 20px;" onclick="functions.openTable()">Open</button>
+                <input type="file" accept="application/json" name="file" id="openFile" style="display: none; visibility: hidden">
+                <button class="btn btn-warning" type="button" style="margin-right: 20px;" onclick="functions.addRow()">Add Row</button>
+                <button class="btn btn-warning" type="button" onclick="functions.editColumnsData()">Edit Columns</button>
+            </div>
+            <div>
+                <button class="btn btn-success" type="button" onclick="functions.saveData()">Save</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div id="table" class="table-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-basic">
+        <p class="copyright">© 2020 Arc <a href="https://github.com/lastarc" style="text-decoration: none; color: #cccccc">&lt;github&gt;</a></p>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>

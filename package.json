@@ -1,0 +1,91 @@
+{
+  "name": "JSON-Table-Editor",
+  "version": "0.1.0",
+  "description": "A JSON table editor built with TypeScript.",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "webpack:dev": "webpack-dev-server --env dev --mode none",
+    "webpack:build": "webpack --env prod --mode production",
+    "electron:dev": "npm run webpack:build && electron .",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": "Arc <o1fym7@inf.elte.hu>",
+  "license": "",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.53",
+    "@electron-forge/maker-deb": "^6.0.0-beta.53",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.53",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.53",
+    "@electron-forge/maker-zip": "^6.0.0-beta.53",
+    "@types/bootstrap": "^5.0.0",
+    "@types/jquery": "^3.5.2",
+    "autoprefixer": "^8.6.0",
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^6.2.0",
+    "css-loader": "^3.2.0",
+    "electron": "^10.1.3",
+    "electron-squirrel-startup": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.5.1",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.14.1",
+    "normalize.css": "^8.0.1",
+    "postcss-loader": "^2.1.5",
+    "sass-loader": "^7.0.2",
+    "style-loader": "^0.21.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.9.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-md5-hash": "0.0.6"
+  },
+  "dependencies": {},
+  "config": {
+    "forge": {
+      "buildIdentifier": "local.apps.ts-table-editor",
+      "packagerConfig": {
+        "asar": true,
+        "arch": [
+          "x64"
+        ],
+        "platform": [
+          "darwin",
+          "win32"
+        ]
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "JSON_Table_Editor",
+            "platforms": "win32"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin",
+            "win32",
+            "linux"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

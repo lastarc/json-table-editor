@@ -1,0 +1,32 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+th {
+  text-transform: capitalize;
+}
+th h3 {
+  margin: 0;
+}
+table {
+  margin-top: 30px;
+}
+
+.form-group label {
+  text-transform: capitalize;
+}
+.form-group textarea {
+  max-width: 95%;
+}
+
+.container-fluid, .row {
+  padding: 0;
+}
+.row {
+  margin: auto 0;
+}
+.col {
+  max-width: calc(100% - 30px);
+}
